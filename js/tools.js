@@ -1,4 +1,4 @@
-/* Утилька — все инструменты. Каждый инструмент: {id, name, icon, cat, desc, tags, render(root)} */
+/* Верстак — все инструменты. Каждый инструмент: {id, name, icon, cat, desc, tags, render(root)} */
 (function () {
   "use strict";
 
@@ -36,8 +36,8 @@
     return r.toLocaleString("ru-RU", { maximumFractionDigits: d == null ? 6 : d });
   };
   U.store = {
-    get(k, def) { try { const v = localStorage.getItem("utilka:" + k); return v == null ? def : JSON.parse(v); } catch (e) { return def; } },
-    set(k, v) { try { localStorage.setItem("utilka:" + k, JSON.stringify(v)); } catch (e) {} },
+    get(k, def) { try { const v = localStorage.getItem("verstak:" + k); return v == null ? def : JSON.parse(v); } catch (e) { return def; } },
+    set(k, v) { try { localStorage.setItem("verstak:" + k, JSON.stringify(v)); } catch (e) {} },
   };
   U.loadScript = (src) => new Promise((ok, fail) => {
     if (U.$(`script[src="${src}"]`)) return ok();
@@ -484,7 +484,7 @@
           if (mode === "work") { cfg.done++; U.store.set("pomo", cfg); }
           const next = mode === "work" ? (cfg.done % 4 === 0 ? "long" : "short") : "work";
           U.toast(mode === "work" ? "🍅 Отлично! Время отдохнуть" : "⏰ Перерыв окончен — за работу!");
-          try { if (Notification.permission === "granted") new Notification("Утилька", { body: mode === "work" ? "Время отдохнуть" : "Перерыв окончен" }); } catch (e) {}
+          try { if (Notification.permission === "granted") new Notification("Верстак", { body: mode === "work" ? "Время отдохнуть" : "Перерыв окончен" }); } catch (e) {}
           setMode(next);
         }
       };

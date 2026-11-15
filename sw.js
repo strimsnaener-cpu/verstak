@@ -1,5 +1,5 @@
-﻿// Утилька: офлайн-режим. Сначала сеть (чтобы обновления приходили сразу), при её отсутствии — кэш.
-const CACHE = "utilka-v2";
+// Верстак: офлайн-режим. Сначала сеть (чтобы обновления приходили сразу), при её отсутствии — кэш.
+const CACHE = "verstak-v2";
 const FILES = ["./", "index.html", "css/style.css", "js/tools.js", "js/app.js", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {

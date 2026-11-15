@@ -1,4 +1,4 @@
-/* Утилька — роутер, каталог, темы */
+/* Верстак — роутер, каталог, темы */
 (function () {
   "use strict";
   const { h, $, $$, esc, store } = window.U;
@@ -17,6 +17,7 @@
   };
   const mono = (t) => MONO[t.id] || t.name.slice(0, 2);
   const PROJECTS = [
+    ["kvadrat", "Квадрат", "Мастерская: обложки, сайты и оформление на заказ"],
     ["zubrilka", "Зубрилка", "Карточки для учёбы с умным повторением"],
     ["kopilka", "Копилка", "Учёт карманных денег и цели накоплений"],
     ["rezume", "Резюме за 5 минут", "Конструктор резюме с шаблонами и PDF"],
@@ -54,7 +55,7 @@
 
   // ---------- страницы ----------
   function home() {
-    document.title = "Утилька — бесплатные онлайн-инструменты";
+    document.title = "Верстак — бесплатные онлайн-инструменты";
     app.innerHTML = "";
     app.append(h(`<section class="hero">
       <h1>Инструменты на&nbsp;каждый день. <mark>Бесплатно</mark>, прямо в&nbsp;браузере.</h1>
@@ -94,7 +95,7 @@
   function toolPage(id) {
     const t = TOOLS.find((x) => x.id === id);
     if (!t) return notFound();
-    document.title = t.name + " — Утилька";
+    document.title = t.name + " — Верстак";
     pushRecent(id);
     app.innerHTML = "";
     app.append(h(`<a class="back" href="#/">← все инструменты</a>`));
@@ -112,7 +113,7 @@
   }
 
   function trends() {
-    document.title = "Тренды — Утилька";
+    document.title = "Тренды — Верстак";
     const link = (id) => { const t = TOOLS.find((x) => x.id === id); return t ? `<a href="#/tool/${id}">${esc(t.name)} →</a>` : ""; };
     const blocks = [
       ["Работа с картинками", "Фото с телефонов весят по 3–10 МБ, а сайты, школьные платформы и мессенджеры просят меньше. Сжатие и перевод в WebP — одна из самых частых задач в интернете.", ["image-compress", "colors"]],
@@ -135,10 +136,10 @@
   }
 
   function about() {
-    document.title = "О сайте — Утилька";
+    document.title = "О сайте — Верстак";
     app.innerHTML = "";
     app.append(h(`<section class="block" style="max-width:760px"><h2>О сайте</h2>
-      <div class="panel"><p style="margin-top:0"><b>Утилька</b> — набор бесплатных онлайн-инструментов. Сайт сделал Даня.</p>
+      <div class="panel"><p style="margin-top:0"><b>Верстак</b> — набор бесплатных онлайн-инструментов. Сайт сделал Даня.</p>
       <p><b>Приватность.</b> Все инструменты работают прямо в твоём браузере. Картинки, тексты и пароли никуда не отправляются. Избранное, заметки и рекорды хранятся только у тебя.</p>
       <p><b>Бесплатно.</b> Без регистрации, подписок и скрытых платежей.</p>
       <p style="margin-bottom:0"><b>Везде.</b> Работает на компьютере и телефоне. Сайт можно установить как приложение: в меню браузера выбери «Установить приложение».</p></div>

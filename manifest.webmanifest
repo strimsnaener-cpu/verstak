@@ -1,6 +1,6 @@
-﻿{
-  "name": "Утилька — бесплатные онлайн-инструменты",
-  "short_name": "Утилька",
+{
+  "name": "Верстак — бесплатные онлайн-инструменты",
+  "short_name": "Верстак",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f5f3",
