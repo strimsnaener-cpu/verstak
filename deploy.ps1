@@ -1,7 +1,7 @@
 ﻿# Выкладка «Утильки» на GitHub Pages (бесплатно).
 # Один раз перед этим: gh auth login --web
 # Запуск: powershell -ExecutionPolicy Bypass -File deploy.ps1
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 Set-Location $PSScriptRoot
 $repo = "utilka"
 
